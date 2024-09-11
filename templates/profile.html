@@ -1,0 +1,21 @@
+{% include "header.html" %}
+<div id="bgbg"></div>
+
+<section class="profile">
+  <div id="userProfile">
+    {% if user.role == "admin" %}
+      <h2 class='title'>Admin Profile</h2>
+    {% else %}
+      <h2 class='title'>User Profile</h2>
+    {%endif%}
+    <img class="user_pro" src="../static/imgs/user.png" alt="">
+    <p><strong>Username: </strong> {{ user.username }}</p>
+    <p><strong>Email: </strong> {{ user.email }}</p>
+    <li class="logout"><a href="/logout">Logout</a></li>
+</div>
+</section>
+
+{% include "footer.html" %}
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+{% include "header.html" %}
+<div id="bgbg"></div>
+
+    <h1 style="margin-top: 100px;">Accident Detection</h1>
+    <form method="post" class="accident_data_form" action="{{ url_for('accident_detection') }}">
+        <table>
+            <thead>
+                <tr>
+                    <th>Username</th>
+                    <th>Email</th>
+                    <th>Location</th>
+                    <th>Description</th>
+                    <th>Time</th>
+                    <th>Images</th>
+                    <th>Mark as Done</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for alert in accident_data %}
+                <tr>
+                    <td>{{ alert.username }}</td>
+                    <td>{{ alert.email }}</td>
+                    <td>{{ alert.location }}</td>
+                    <td>{{ alert.description }}</td>
+                    <td>{{ alert.time | datetimeformat }}</td>
+                    <td>
+                        <a href="{{ url_for('static', filename='accidents/' + alert.photo.split('/')[-1]) }}" target="_blank">
+                            <img src="{{ url_for('static', filename='accidents/' + alert.photo.split('/')[-1]) }}" alt="Accident Image" style="width:100px;">
+                        </a>
+                    </td>
+                    <td>
+                        <input type="checkbox" name="done" value="{{ alert.photo }}" {% if alert.viewed %}checked{% endif %}>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <button type="submit">Update</button>
+    </form>
+</body>
+</html>

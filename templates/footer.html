@@ -1,0 +1,20 @@
+
+<footer>
+  <div class="contact"></div>
+  <div class="copyright">
+    ALCHEMIST TREASURE © AI module of accident detection 2024. <a href=""> Contact us : 7846006663</a>
+  </div>
+  
+</footer>
+{% if user %}
+  {% if user.role == 'admin' %}
+  <script>
+      const eventSource = new EventSource("/notifications");
+      eventSource.onmessage = function(event) {
+          const data = JSON.parse(event.data);
+          alert(`Accident Detected: ${data.description} at ${data.location}`);
+          window.location.href = "/accident_detection";
+      };
+  </script>
+  {% endif %}
+{% endif %}

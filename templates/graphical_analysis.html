@@ -1,0 +1,14 @@
+{% include "header.html" %}
+<div id="bgbg"></div>
+    <div style="margin-top: 100px;" class="container">
+        <h1 class="mt-5">Accident Graphical Analysis</h1>
+        <div class="mt-5">
+            <h2 style="color: aquamarine;">Accidents per Date</h2>
+            <img src="{{ url_for('generate_graph') }}" alt="Accidents per Date" class="img-fluid">
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</body>
+</html>

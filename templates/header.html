@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Accident Analysis</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+  <link rel="stylesheet" href="static/style.css">
+
+
+
+</head>
+
+<body>
+  <header class="header">
+    <div class="row" id="nav_row">
+      <div id="logo">
+        <span class="t">A</span>LCHEMIST <span class="t">T</span>REASURE
+      </div>
+      <ul>
+        {% if user %}
+          {% if user.role == 'admin' %}
+          <li><a href="/" onclick="showSection('home')">Home</a></li>
+          <li><a href="/accident_detection" onclick="showSection('accident_detection')">Status</a></li>
+          <li><a href="/graph" onclick="showSection('graphs')">Analysis</a></li>
+          <li><a href="">Emergency</a></li>
+
+          {% else %}
+          <li><a href="/" onclick="showSection('home')">Home</a></li>
+          <li><a href="/about" onclick="showSection('previousAccidentReport')">About</a></li>
+          <li><a title="For emergency services" href="#emergency_services">Services</a></li>
+          <li><a href="/contact" onclick="showSection('contact')">Contact</a></li>
+          {% endif %}
+          <!-- User Profile Link -->
+          <li><a href="/profile" onclick="showSection('profile')">{{ user.username }}</a></li>
+          {% else %}
+          <li><a href="/about" onclick="showSection('about')">More About Us</a></li>
+        {% endif %}
+      </ul>
+    </div>
+  </header>
+</body>
+
+</html>

@@ -1,0 +1,8 @@
+Flask
+uuid
+opencv-python
+numpy
+matplotlib
+tensorflow
+python-dotenv
+Werkzeug

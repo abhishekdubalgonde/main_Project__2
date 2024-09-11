@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+{% include "header.html" %}
+<div id="bgbg"></div>
+
+<title>About Us - Road Accident Detection</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background: url('your-background-image.jpg') no-repeat center center fixed;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    padding-top: 130px;
+  }
+
+  .header {
+    background-color: rgba(44, 62, 80, 0.8);
+    color: #fff;
+    padding: 10px 20px;
+    text-align: center;
+    backdrop-filter: blur(5px);
+  }
+
+  .content {
+    max-width: 1500px;
+    margin: 40px auto;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 80px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  h1,
+  h2 {
+    color: #fff;
+  }
+
+  p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #fff;
+    margin-top: 15px;
+  }
+  .interactive-section2,
+  .interactive-section {
+    margin: 20px 0;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+  }
+  .interactive-section2{
+    flex-direction: column;
+    text-align: center;
+  }
+  .interactive-section img {
+    height: 300px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+  }
+
+  .interactive-section img:hover {
+    transform: scale(1.05);
+  }
+
+  .button {
+    display: inline-block;
+    margin: 20px 0;
+    padding: 10px 20px;
+    font-size: 18px;
+    color: #fff;
+    background-color: rgba(231, 76, 60, 0.8);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s, transform 0.3s;
+  }
+
+  .button:hover {
+    background-color: rgba(192, 57, 43, 0.8);
+    transform: scale(1.05);
+  }
+</style>
+</head>
+
+<body>
+  <div class="">
+    <h1>About Us</h1>
+  </div>
+  <div class="content">
+    <h1>Our Mission</h1>
+    <p style="text-align: center;">We aim to enhance road safety by utilizing the power of machine learning and modern technology. Our system is
+      designed to detect live road accidents through CCTV cameras and immediately alert the appropriate emergency
+      services. Where CCTV cameras are not available, our mobile camera section allows for video capture that our model
+      analyzes to detect and respond to accidents promptly.</p>
+
+    <div class="interactive-section">
+      <img src=".././static/imgs/th.jpeg" alt="Road Accident Detection">
+      <div class="ff">
+        <h2>How It Works</h2>
+      <p>Our advanced machine learning model monitors live feeds from CCTV cameras. If an accident is detected, an alert
+        is sent to emergency services so they can take immediate action. In areas without CCTV coverage, users can
+        capture video using their mobile devices, and our model will analyze the footage in real-time.</p>
+      </div>
+    </div>
+
+    <div class="interactive-section2">
+      <div class="ff">
+        <h2>Why Choose Us?</h2>
+        <p>Our solution offers a reliable and efficient way to monitor road safety, ensuring that help is dispatched as
+          quickly as possible in the event of an accident. By leveraging both stationary and mobile cameras, we cover
+          more ground and save lives by reducing response times.</p>
+      </div>
+      <a href="#" class="button">Learn More</a>
+    </div>
+  </div>
+  {% include "footer.html" %}
+</body>
+
+</html>

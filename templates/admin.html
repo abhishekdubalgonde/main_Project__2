@@ -1,0 +1,85 @@
+
+{% include "header.html" %}
+
+<style>
+    .container {
+        width: 100%;
+        margin: 0 auto;
+    }
+    h1 {
+        font-size: 40px;
+        color: #ffff;
+        margin: 10px 0 25px 0;
+    }
+    h2 {
+        color: #fff;
+        margin: 20px 0 5px 0;
+    }
+
+    .container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    
+    .cctv-feeds {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+    
+    .camera-feed {
+        text-align: center;
+        position: relative;
+        margin-top: 10px;
+    }
+    .video_box {
+        border: solid 1px #fff;
+        border-radius: 9px;
+    }
+    .c_count {
+        position: absolute;
+        top: 3px;
+        right: 5px;
+        color: #fff;
+        font-size: 10px;
+    }
+</style>
+<div id="bgbg"></div>
+
+<section class="main" style="padding-top: 100px;">
+
+    <div class="container">
+        <h1 class="title" style="margin: 32px 0">Live surveillance camera</h1>
+        <div class="cctv-feeds">
+            {% for i in range(1, 13) %}
+            <div class="camera-feed">
+                <h3 class="c_count">Device Camera {{ i }}</h3>
+                <video class="video_box" id="camera{{ i }}" width="400" autoplay></video>
+            </div>
+            {% endfor %}
+        </div>
+        
+        <h2>Accident Analysis</h2>
+
+    </div>
+</section>
+
+<script>
+    async function startCamera(cameraId, videoElementId) {
+        try {
+            const stream = await navigator.mediaDevices.getUserMedia({ video: true });
+            const videoElement = document.getElementById(videoElementId);
+            videoElement.srcObject = stream;
+        } catch (error) {
+            console.error(`Error accessing camera ${cameraId}:`, error);
+        }
+    }
+    
+    document.addEventListener("DOMContentLoaded", () => {
+        for (let i = 1; i <= 12; i++) {
+            startCamera(i, `camera${i}`);
+        }
+    });
+</script>
+</body>
+</html>
