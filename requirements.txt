@@ -6,3 +6,4 @@ matplotlib
 tensorflow
 python-dotenv
 Werkzeug
+BUN_VERSION 1.1.0
