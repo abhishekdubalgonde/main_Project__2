@@ -365,6 +365,3 @@ def about():
     return render_template('about.html')
   
 
-if __name__ == "__main__":
-    update_existing_alerts()
-    app.run(debug=False, host='0.0.0.0')
